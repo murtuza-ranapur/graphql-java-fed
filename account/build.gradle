@@ -1,0 +1,23 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:8.1.0'
+    implementation 'com.apollographql.federation:federation-graphql-java-support:0.5.0'
+
+    runtimeOnly 'com.graphql-java-kickstart:graphiql-spring-boot-starter:8.1.0'
+
+    testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:8.1.0'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+bootJar {
+	enabled = true
+}
+

@@ -1,0 +1,9 @@
+type Account @key(fields: "id"){
+    id: ID!
+    name: String
+}
+
+type Query{
+    account(id: String): Account
+    accounts: [Account]
+}

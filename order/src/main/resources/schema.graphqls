@@ -1,0 +1,14 @@
+type Account @key(fields: "id") @extends {
+    id: ID! @external
+    orders: [Order]
+}
+
+type Order @key(fields: "id") {
+    id: String!
+    item: String!
+    account: Account
+}
+
+type Query{
+    orders: [Order]!
+}

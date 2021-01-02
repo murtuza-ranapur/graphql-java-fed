@@ -1,0 +1,4 @@
+rootProject.name = 'graphql-java-fed'
+
+include 'account'
+include 'order'
