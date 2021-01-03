@@ -1,2 +1,19 @@
 server:
   port: 8081
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+graphiql:
+  mapping: /graphiql
+  endpoint:
+    graphql: /graphql
+  static:
+    basePath: /
+  enabled: true
+  pageTitle: GraphiQL
+  cdn:
+    enabled: false
+    version: 0.13.0

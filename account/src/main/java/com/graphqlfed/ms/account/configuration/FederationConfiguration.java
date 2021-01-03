@@ -1,7 +1,9 @@
-package com.graphqlfed.ms.account;
+package com.graphqlfed.ms.account.configuration;
 
 import com.apollographql.federation.graphqljava.Federation;
 import com.apollographql.federation.graphqljava._Entity;
+import com.graphqlfed.ms.account.usecase.Account;
+import com.graphqlfed.ms.account.usecase.AccountService;
 import graphql.TypeResolutionEnvironment;
 import graphql.kickstart.tools.SchemaParser;
 import graphql.schema.DataFetchingEnvironment;

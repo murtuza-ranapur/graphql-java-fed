@@ -1,3 +1,9 @@
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
 graphiql:
   mapping: /graphiql
   endpoint:

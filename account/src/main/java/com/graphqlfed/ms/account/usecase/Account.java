@@ -1,4 +1,4 @@
-package com.graphqlfed.ms.account;
+package com.graphqlfed.ms.account.usecase;
 
 public class Account {
     private String id;

@@ -10,5 +10,5 @@ type Order @key(fields: "id") {
 }
 
 type Query{
-    orders: [Order]!
+    orders(accountId: String!): [Order]!
 }

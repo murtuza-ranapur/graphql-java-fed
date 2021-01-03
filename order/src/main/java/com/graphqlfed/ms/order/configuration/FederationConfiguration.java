@@ -1,7 +1,9 @@
-package com.graphqlfed.ms.order;
+package com.graphqlfed.ms.order.configuration;
 
 import com.apollographql.federation.graphqljava.Federation;
 import com.apollographql.federation.graphqljava._Entity;
+import com.graphqlfed.ms.order.communication.Account;
+import com.graphqlfed.ms.order.communication.AccountService;
 import graphql.TypeResolutionEnvironment;
 import graphql.kickstart.tools.SchemaParser;
 import graphql.schema.DataFetchingEnvironment;
