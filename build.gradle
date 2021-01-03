@@ -1,37 +1,24 @@
-buildscript {
-	repositories {
-		mavenCentral()
-        jcenter()
-	}
-}
-
 plugins {
-	id 'java-library'
-	id 'org.springframework.boot' version "${springBoot}"
 	id 'io.spring.dependency-management' version "${dependencyManagement}"
 }
 
-allprojects {
-	group = 'com.graphqlfed'
-	version = '0.0.1-SNAPSHOT'
-	sourceCompatibility = '1.8'
-}
 subprojects {
 
-	apply plugin: 'org.springframework.boot'
+    group = 'com.graphqlfed.ms'
+    version = '0.0.1-SNAPSHOT'
+
 	apply plugin: 'io.spring.dependency-management'
 	apply plugin: 'java-library'
 	apply plugin: 'java'
 
 	repositories {
 		mavenCentral()
+        jcenter()
 	}
 
-	test {
-		useJUnitPlatform()
-	}
-}
-
-bootJar {
-	enabled = false
+    dependencyManagement{
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.7.RELEASE")
+        }
+    }
 }
