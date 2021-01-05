@@ -1,11 +1,11 @@
-server:
-  port: 8081
 spring:
   jpa:
     show-sql: true
     generate-ddl: true
     hibernate:
       ddl-auto: create-drop
+  application:
+    name: order
 graphiql:
   mapping: /graphiql
   endpoint:

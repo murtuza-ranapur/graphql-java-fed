@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+build:
+  tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:dev"
+  artifacts:
+    - image: local/account
+      jib: {
+             project: account
+      }
+deploy:
+  kubectl:
+    manifests: ["account/*.yaml"]

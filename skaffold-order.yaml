@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+build:
+  tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:dev"
+  artifacts:
+    - image: local/order
+      jib: {
+        project: order
+      }
+deploy:
+  kubectl:
+    manifests: ["order/*.yaml"]

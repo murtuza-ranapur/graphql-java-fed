@@ -4,6 +4,8 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: create-drop
+  application:
+    name: account
 graphiql:
   mapping: /graphiql
   endpoint:

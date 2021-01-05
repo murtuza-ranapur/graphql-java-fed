@@ -1,5 +1,7 @@
 plugins {
 	id 'io.spring.dependency-management' version "${dependencyManagement}"
+    id 'com.google.cloud.tools.jib' version '2.0.0' apply false
+    id 'java'
 }
 
 subprojects {
@@ -8,6 +10,7 @@ subprojects {
     version = '0.0.1-SNAPSHOT'
 
 	apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'com.google.cloud.tools.jib'
 	apply plugin: 'java-library'
 	apply plugin: 'java'
 
@@ -16,9 +19,19 @@ subprojects {
         jcenter()
 	}
 
+    jib{
+        from{
+            image = 'openjdk:12'
+        }
+        to {
+            image = "local/${project.name}:latest"
+        }
+    }
+
     dependencyManagement{
         imports {
             mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.7.RELEASE")
+            mavenBom("org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR1")
         }
     }
 }
