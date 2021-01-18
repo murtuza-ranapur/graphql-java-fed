@@ -6,6 +6,9 @@ spring:
       ddl-auto: create-drop
   application:
     name: order
+graphql:
+  servlet:
+    tracing-enabled: true
 graphiql:
   mapping: /graphiql
   endpoint:

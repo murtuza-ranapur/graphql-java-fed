@@ -16,6 +16,7 @@ public class OrderService implements GetOrderUsecase{
 
     @Override
     public List<Order> getOrderByAccount(String accountId) {
+        log.info("Fetching orders for account {}", accountId);
         return mapper.toModels(repository.findAllByAccountId(accountId));
     }
 }

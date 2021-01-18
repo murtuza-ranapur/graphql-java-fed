@@ -1,0 +1,20 @@
+dependencies {
+    api 'org.springframework.cloud:spring-cloud-starter-kubernetes-all'
+    api 'org.springframework.boot:spring-boot-starter-actuator'
+    api 'org.springframework.boot:spring-boot-starter-web'
+    api 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    api 'com.graphql-java-kickstart:graphql-spring-boot-starter:8.1.0'
+    api 'com.apollographql.federation:federation-graphql-java-support:0.5.0'
+
+    api 'org.mapstruct:mapstruct:1.4.1.Final'
+
+    runtimeOnly 'com.graphql-java-kickstart:graphiql-spring-boot-starter:8.1.0'
+    runtimeOnly 'com.h2database:h2'
+
+    testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:8.1.0'
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
